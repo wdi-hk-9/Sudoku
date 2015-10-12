@@ -1,0 +1,47 @@
+h1 {
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+td {
+  border: 1px solid grey;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  font-size: 8em;
+  box-sizing:border-box;
+}
+
+#row-1 > td, #row-9 > td {
+  border-top:none;
+  border-bottom: none;
+}
+
+td:hover{
+  cursor:pointer;
+}
+
+td:first-child{
+  border-left: none;
+}
+td:last-child{
+  border-right: none;
+}
+td[data-num='3'],td[data-num='6']{
+  border-right: 3px solid black;
+
+}
+#row-3, #row-6 {
+  border-bottom: 3px solid black;
+}
+
+
+
+
+
+
+
