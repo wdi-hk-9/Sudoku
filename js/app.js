@@ -1,4 +1,7 @@
 $(function(){
-var timer;
-var game = new Game();
+
+  var board = new Board();
+
+board.intialiseSoduku ();
+
 });
