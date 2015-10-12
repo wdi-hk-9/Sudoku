@@ -1,7 +1,12 @@
 $(function(){
 
-  var board = new Board();
+  var game = new Sudoku();
 
-board.intialiseSoduku ();
+  game.print();
 
+  game.swapRows(game.board[0] , game.board[1]);
+
+  game.print();
+
+    // $('thead > tr > td').html(game.board[0][i]);
 });
