@@ -40,3 +40,16 @@ Sudoku.prototype.swapRows = function(row1, row2){
   this.board[1] = row2;
   // this.print();
 };
+
+// Hide Sudoku Elements
+Sudoku.prototype.hideElements = function(){
+  //Mask random elements in array
+  var maskBoard = this.board
+  for (var i = 0; i < 40; i++) {
+    var randIndex1 = Math.floor(Math.random() * 9);
+    var randIndex2 = Math.floor(Math.random() * 9);
+    var del = delete maskBoard[randIndex1][randIndex2];
+  }
+    this.print(maskBoard);
+
+};

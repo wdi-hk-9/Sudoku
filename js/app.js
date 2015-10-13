@@ -4,9 +4,11 @@ $(function(){
 
   game.print();
 
-  game.swapRows(game.board[0] , game.board[1]);
+  // game.swapRows(game.board[0] , game.board[1]);
 
-  game.print();
+  // game.print();
 
-    // $('thead > tr > td').html(game.board[0][i]);
+  game.hideElements();
+
+    // $('thead > tr > td').html(game.board[0][0]);
 });
