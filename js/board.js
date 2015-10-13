@@ -3,19 +3,15 @@
 var Sudoku = function() {
 
   // Initialize new board
-  this.board = [];
-  this.board.push( [1,2,3, 4,5,6, 7,8,9] );
-  this.board.push( [4,5,6, 7,8,9, 1,2,3] );
-  this.board.push( [7,8,9, 1,2,3, 4,5,6] );
-
-  this.board.push( [2,3,4, 5,6,7, 8,9,1] );
-  this.board.push( [5,6,7, 8,9,1, 2,3,4] );
-  this.board.push( [8,9,1, 2,3,4, 5,6,7] );
-
-  this.board.push( [3,4,5, 6,7,8, 9,1,2] );
-  this.board.push( [6,7,8, 9,1,2, 3,4,5] );
-  this.board.push( [9,1,2, 3,4,5, 6,7,8] );
-
+  this.board = [[1,2,3,4,5,6,7,8,9],
+                [4,5,6,7,8,9,1,2,3],
+                [7,8,9,1,2,3,4,5,6],
+                [2,3,4,5,6,7,8,9,1],
+                [5,6,7,8,9,1,2,3,4],
+                [8,9,1,2,3,4,5,6,7],
+                [3,4,5,6,7,8,9,1,2],
+                [6,7,8,9,1,2,3,4,5],
+                [9,1,2,3,4,5,6,7,8]];
 };
 
 // Print Sudoku
@@ -39,17 +35,4 @@ Sudoku.prototype.swapRows = function(row1, row2){
   this.board[0] = row1;
   this.board[1] = row2;
   // this.print();
-};
-
-// Hide Sudoku Elements
-Sudoku.prototype.hideElements = function(){
-  //Mask random elements in array
-  var maskBoard = this.board
-  for (var i = 0; i < 40; i++) {
-    var randIndex1 = Math.floor(Math.random() * 9);
-    var randIndex2 = Math.floor(Math.random() * 9);
-    var del = delete maskBoard[randIndex1][randIndex2];
-  }
-    this.print(maskBoard);
-
 };
