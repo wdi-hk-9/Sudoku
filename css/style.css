@@ -42,11 +42,15 @@ td[data-num='3'],td[data-num='6']{
 
 td input {
   text-align: center;
-  width: 25px;
-  color:red;
+  width: 40px;
+  color:blue;
 }
 
+button {
+  margin-left: 30px;
+}
 
-
-
+label {
+  font-size:  20px;
+}
 
