@@ -1,10 +1,14 @@
 $(function(){
 
+  var timer;
   var game = new Sudoku();
+  var secondsLeft = 0;
+  var mySound = new buzz.sound("0477.ogg");
+
   // game.print();
   // game.swapRows(game.board[0] , game.board[1]);
 
-  var hideRandomCell = function(difficulty){
+  var startGame = function(difficulty){
     var cells = $('td')
     for (var i = 0; i < difficulty; i++) {
       var randIndex1 = Math.floor(Math.random() * 81);
@@ -12,6 +16,7 @@ $(function(){
     };
     $('td:empty').html('<input type="text"></input>');
     $('td input').on('keyup', checkResults);
+    startTimer();
   };
 
     // Show the Solution
@@ -24,7 +29,6 @@ $(function(){
   };
 
   var createGame = function(difficulty){
-    console.log('heyyy');
     for (var i = 0; i < 9; i++){
       var htmlRow = '<tr id="row-' + (i+1) +'">';
       for (var j = 0; j < 9; j++) {
@@ -32,18 +36,20 @@ $(function(){
       }
       $("#row-"+(i+1)).replaceWith(htmlRow);
     }
-    hideRandomCell(difficulty);
+    startGame(difficulty);
   };
 
   var checkResults = function(){
     var input = $(this).val();
-    var value = $(this).parent().attr('value');
-    if (input == value){
+    var solution = $(this).parent().attr('value');
+    if (input == solution){
       $(this).val(input);
-      console.log("Right Answer!");
     } else {
-      alert("Wrong Answer! Please Try Again.");
+      mySound.play();
+      $(this).effect('shake');
       $(this).val('');
+      secondsLeft = secondsLeft + 10;
+      alert("Wrong Answer! 10 secs added!");
     }
     checkgameCompleted();
   };
@@ -56,13 +62,24 @@ $(function(){
       }
     }
     if (allInputsWithText) {
+      clearInterval(timer);
       console.log("Game Completed");
     } else {
       console.log("Game Not Completed");
     }
   };
 
-  // Create Game
+// Set Timer Starts
+  var everySecond = function(){
+    secondsLeft++
+    $('#time-increase').html(secondsLeft);
+  };
+  var startTimer = function(){
+    timer = setInterval(everySecond, 1000);
+  };
+// Set Timer End
+
+// Create Game
   $('#easy').on(  'click' , function(){ createGame(3) });
   $('#medium').on('click' , function(){ createGame(30) });
   $('#hard').on(  'click' , function(){ createGame(50) });

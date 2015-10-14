@@ -1,7 +1,8 @@
 'use strict';
 
 var Sudoku = function() {
-
+  this.secondsLeft = 0;
+  this.timer = null;
   // Initialize new board
   this.board = [[1,2,3,4,5,6,7,8,9],
                 [4,5,6,7,8,9,1,2,3],

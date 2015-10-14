@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sudoku</title>
+  <title>Sudoku Game</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <section class = "container well">
-    <h1 class="h1">Sudoku</h1>
+    <h1 class="h1">The Sudoku Game</h1>
     <table>
       <thead>
         <tr id="row-1">
@@ -123,11 +123,12 @@
     <button type="button" class="btn btn-primary btn-lg" id="easy">Easy</button>
     <button type="button" class="btn btn-primary btn-lg" id="medium">Medium</button>
     <button type="button" class="btn btn-primary btn-lg" id="hard">Hard</button>
-    <!-- <label> Timer: </label> -->
     <button type="button" class="btn btn-success btn-lg" id="solution">Solution</button>
+    <label class = "timer"> Timer : <span id="time-increase">0:00</span> seconds</p></label>
   </section>
-
+  <script src="buzz.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="js/board.js"></script>
   <script src="js/app.js" async></script>
 </body>
