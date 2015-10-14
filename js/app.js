@@ -4,12 +4,12 @@ $(function(){
   // game.print();
   // game.swapRows(game.board[0] , game.board[1]);
 
-  var hideRandomCell = function(){
+  var hideRandomCell = function(difficulty){
     var cells = $('td')
-      for (var i = 0; i < 3; i++) {
-        var randIndex1 = Math.floor(Math.random() * 81);
-        cells.eq(randIndex1).html("");
-      };
+    for (var i = 0; i < difficulty; i++) {
+      var randIndex1 = Math.floor(Math.random() * 81);
+      cells.eq(randIndex1).html("");
+    };
     $('td:empty').html('<input type="text"></input>');
     $('td input').on('keyup', checkResults);
   };
@@ -23,23 +23,17 @@ $(function(){
     }
   };
 
-  var createGame = function(){
+  var createGame = function(difficulty){
+    console.log('heyyy');
     for (var i = 0; i < 9; i++){
       var htmlRow = '<tr id="row-' + (i+1) +'">';
-        for (var j = 0; j < 9; j++) {
-          htmlRow += '<td data-num ="' + (j+1) +'"value="' + game.board[i][j] + '">' + game.board[i][j] + '</td>';
-        };
+      for (var j = 0; j < 9; j++) {
+        htmlRow += '<td data-num ="' + (j+1) +'"value="' + game.board[i][j] + '">' + game.board[i][j] + '</td>';
+      }
       $("#row-"+(i+1)).replaceWith(htmlRow);
     }
-    hideRandomCell();
+    hideRandomCell(difficulty);
   };
-
-  // //Unfocus
-  // // var inputtedtestNum = function (event){
-  // //   $(this).parent().on('click', inputNum);
-  // //   var inputtedNum = $(this).val();
-  // //   $(this).parent().html(inputtedNum);
-  // // };
 
   var checkResults = function(){
     var input = $(this).val();
@@ -48,23 +42,29 @@ $(function(){
       $(this).val(input);
       console.log("Right Answer!");
     } else {
-      console.log("Wrong Answer! Please Try Again.");
+      alert("Wrong Answer! Please Try Again.");
       $(this).val('');
     }
-  checkgameCompleted();
+    checkgameCompleted();
   };
 
   var checkgameCompleted = function (){
-      if ($('input').val() == "") {
-        console.log("Game Not Completed");
-      } else {console.log("Game Completed")};
+    var allInputsWithText = true;
+    for (i=0; i < $('input').length; i++) {
+      if ($($('input')[i]).val() == "") {
+        allInputsWithText = false;
+      }
+    }
+    if (allInputsWithText) {
+      console.log("Game Completed");
+    } else {
+      console.log("Game Not Completed");
+    }
   };
 
   // Create Game
-  $('#easy').on('click' , createGame);
-  $('#medium').on('click' , createGame);
-
-  // Unfocus
-  // $('document').on('blur' , 'td input', inputtedtestNum);
+  $('#easy').on(  'click' , function(){ createGame(3) });
+  $('#medium').on('click' , function(){ createGame(30) });
+  $('#hard').on(  'click' , function(){ createGame(50) });
   $('#solution').on('click' , showSolution);
 });
