@@ -40,7 +40,11 @@ td[data-num='3'],td[data-num='6']{
   border-bottom: 3px solid black;
 }
 
-
+td input {
+  text-align: center;
+  width: 25px;
+  color:red;
+}
 
 
 
