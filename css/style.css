@@ -1,0 +1,77 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+td {
+  border: 1px solid grey;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  box-sizing:border-box;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#row-1 > td, #row-9 > td {
+  border-top:none;
+  border-bottom: none;
+}
+
+td:hover{
+  cursor:pointer;
+}
+
+td:first-child{
+  border-left: none;
+}
+td:last-child{
+  border-right: none;
+}
+td[data-num='3'],td[data-num='6']{
+  border-right: 3px solid black;
+
+}
+#row-3, #row-6 {
+  border-bottom: 3px solid black;
+}
+
+td input {
+  text-align: center;
+  width: 50px;
+  color:blue;
+}
+
+button {
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+#solution {
+margin-left: 100px;
+}
+
+p {
+font-size: 16px;
+}
+
+label {
+  display: inline-block;
+  position: absolute;
+  font-size:  25px;
+  margin-top: 22px;
+  margin-left: 240px;
+}
+
+.modal {
+  text-align: center;
+}
