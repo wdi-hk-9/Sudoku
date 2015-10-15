@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
   <h1 class="h1">Sexy Sudoku</h1>
   <section class='container well'>
@@ -16,7 +15,6 @@
       <li><a id="game" data-toggle="tab" href="#menu1">Play Game</a></li>
     </ul>
   </section>
-
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <section class="container well">
@@ -31,13 +29,13 @@
         </ul>
         <p>Try and completed the puzzle in the shortest possible time. For each wrong answer a 10 second penalty will added to the Timer.</p>
         <h2>Choose Game Difficulty to Begin Game:<h2>
-          <button type="button" class="btn btn-primary btn-sm" id="easy">Easy</button>
-          <button type="button" class="btn btn-warning btn-md" id="medium">Medium</button>
-          <button type="button" class="btn btn-danger btn-lg" id="hard">Hard</button>
+        <button type="button" class="btn btn-primary btn-sm" id="easy">Easy</button>
+        <button type="button" class="btn btn-warning btn-md" id="medium">Medium</button>
+        <button type="button" class="btn btn-danger btn-lg" id="hard">Hard</button>
       </section>
     </div>
     <div id="menu1" class="tab-pane fade in">
-    <section class = "container well">
+      <section class = "container well">
         <table>
           <thead>
             <tr id="row-1">
@@ -75,7 +73,7 @@
             </tr>
           </thead>
           <tbody>
-             <tr id="row-4">
+            <tr id="row-4">
               <td data-num="1"></td>
               <td data-num="2"></td>
               <td data-num="3"></td>
@@ -86,7 +84,7 @@
               <td data-num="8"></td>
               <td data-num="9"></td>
             </tr>
-             <tr id="row-5">
+            <tr id="row-5">
               <td data-num="1"></td>
               <td data-num="2"></td>
               <td data-num="3"></td>
@@ -97,7 +95,7 @@
               <td data-num="8"></td>
               <td data-num="9"></td>
             </tr>
-             <tr id="row-6">
+            <tr id="row-6">
               <td data-num="1"></td>
               <td data-num="2"></td>
               <td data-num="3"></td>
@@ -121,7 +119,7 @@
               <td data-num="8"></td>
               <td data-num="9"></td>
             </tr>
-             <tr id="row-8">
+            <tr id="row-8">
               <td data-num="1"></td>
               <td data-num="2"></td>
               <td data-num="3"></td>
@@ -145,38 +143,38 @@
             </tr>
           </tfoot>
         </table>
-    <button type="button" class="btn btn-success btn-lg" id="solution">Solution</button>
-    <label class = "timer"> Timer : <span id="time-increase">0</span> seconds</label>
-      <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-danger">Wrong Answer! 10 secs added!</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="modal fade" id="myModalwin" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title text-success"> Well done! You have completed the game in <span id="timeWin">0</span> seconds</h2>
-          </div>
-          <div class="modal-body">
-            <img src="pikachu.png" width="200" height="200" align="middle">
+        <button type="button" class="btn btn-success btn-lg" id="solution">Solution</button>
+        <label class = "timer"> Timer : <span id="time-increase">0</span> seconds</label>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-danger">Wrong Answer! 10 secs added!</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    </section>
+        <div class="modal fade" id="myModalwin" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-success"> Well done! You have completed the game in <span id="timeWin">0</span> seconds</h2>
+              </div>
+              <div class="modal-body">
+                <img src="pikachu.png" width="200" height="200" align="middle">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
   <script src="buzz.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="js/board.js"></script>
-  <script src="js/app.js" async></script>
+  <script src="js/app.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
