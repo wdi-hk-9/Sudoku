@@ -49,7 +49,7 @@ $(function(){
       $(this).effect('shake');
       $(this).val('');
       secondsLeft = secondsLeft + 10;
-      alert("Wrong Answer! 10 secs added!");
+      $("#myModal").modal()
     }
     checkgameCompleted();
   };
@@ -64,6 +64,8 @@ $(function(){
     if (allInputsWithText) {
       clearInterval(timer);
       console.log("Game Completed");
+      $('#timeWin').html(secondsLeft);
+      $("#myModalwin").modal()
     } else {
       console.log("Game Not Completed");
     }
@@ -80,8 +82,21 @@ $(function(){
 // Set Timer End
 
 // Create Game
-  $('#easy').on(  'click' , function(){ createGame(3) });
-  $('#medium').on('click' , function(){ createGame(30) });
-  $('#hard').on(  'click' , function(){ createGame(50) });
+  $('#easy').on(  'click' , function(e){
+    e.preventDefault()
+    createGame(3)
+    $('#game').tab('show')
+  });
+  $('#medium').on(  'click' , function(e){
+    e.preventDefault()
+    createGame(30)
+    $('#game').tab('show')
+  });
+  $('#hard').on(  'click' , function(e){
+    e.preventDefault()
+    createGame(50)
+    $('#game').tab('show')
+  });
+
   $('#solution').on('click' , showSolution);
 });

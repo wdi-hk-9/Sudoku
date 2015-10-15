@@ -1,3 +1,7 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 h1 {
   margin-bottom: 30px !important;
   text-align: center;
@@ -47,13 +51,27 @@ td input {
 }
 
 button {
+  margin-top: 20px;
+  display: inline-block;
   margin-left: 30px;
 }
 
-label {
-  font-size:  25px;
+#solution {
+margin-left: 100px;
 }
 
-.timer {
-  margin-left: 50px;
+p {
+font-size: 16px;
+}
+
+label {
+  display: inline-block;
+  position: absolute;
+  font-size:  25px;
+  margin-top: 22px;
+  margin-left: 240px;
+}
+
+.modal {
+  text-align: center;
 }
